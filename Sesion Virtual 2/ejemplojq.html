@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("button").click(function() {
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn("3000");
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+<div>
+  <button type="button" name="button"> Presiona para el efecto</button>
+</div>
+<br>
+<div id="div1" style="width:90px;height:90px;background-color:red;display:none;"> </div>
+<br>
+<div id="div2" style="width:90px;height:90px;background-color:blue;display:none;"> </div>
+<br>
+<div id="div3" style="width:90px;height:90px;background-color:green;display:none;"> </div>
+<br>
+
+</body>
+</html>

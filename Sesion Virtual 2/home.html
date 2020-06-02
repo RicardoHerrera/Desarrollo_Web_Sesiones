@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles/styles.css">
+
+  <h1>Mi primera página Web</h1>
+  <h2>Desarrollo Web</h2>
+
+  <script>
+    function sayHi() {
+      document.getElementById("demo").innerHTML = "Hola Javascript";
+    }
+
+    function changeImage(change) {
+      if (change == 0) {
+        document.getElementById("image").src = "images/youDidIt.jpg"
+        document.getElementById("image").style.width = "25%"
+				document.getElementById("image").style.height = "25%"
+      } else {
+        document.getElementById("image").src = "images/demo.png"
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <p>Me gusta esto!</p>
+  <p class="someClass">Me gusta esto también!</p>
+  <p class="otherClass">Esto es verde</p>
+  <p id="demo">Esta es una demostración</p>
+
+  <ul> Coffees
+    <li>Oscuro</li>
+    <li>Con leche</li>
+    <li>Frappé</li>
+  </ul>
+
+  <ol type="I"> Pasos
+    <li> Abrir el html</li>
+    <li> Escribir código</li>
+  </ol>
+
+  <img id="imagen" src="images/demo.png" alt="Imagen Demo" width="20%" height="20%">
+  <div>
+    <a href="https://www.google.com" target="_blank">Llévame a google</a>
+  </div>
+
+  <div>
+    <button type="button" onclick="sayHi()">Tap Me!</button>
+  </div>
+  <div>
+    <button type="button" onclick="changeImage()">Cambiar imagen</button>
+  </div>
+  <div>
+    <a href="ejemplojq.html">Ver ejemplo JQ</a>
+  </div>
+  <div>
+    <a href="carusel.html">Ver ejemplo Bootstrap</a>
+  </div>
+
+</body>
+
+</html>

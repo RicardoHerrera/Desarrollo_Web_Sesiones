@@ -1,0 +1,14 @@
+h1 {
+  color: red;
+}
+
+p.someClass {
+  color: blue;
+  border: 1px solid black;
+  width: 400px;
+}
+p.otherClass { color: green;}
+
+#demo {
+  color: orange;
+}

@@ -21,4 +21,8 @@ class SessionsController < ApplicationController
 
   def welcome
   end
+
+  def page_requires_login
+    @users_list = User.all
+  end
 end

@@ -1,1 +1,16 @@
 <h1>You have access to this page, <%= current_user.username %></h1>
+
+<div>
+	<label name="selectController"> Usando lógica en sessions_controller</label>
+	<%= collection_select(:user_id,:user_name,@users_list,:id,:username) %>	
+</div>
+
+<div>
+	<label name="selectView"> Usando lógica en View</label>
+	<%= collection_select(:user, :user_id, User.all, :id, :username) %>	
+</div>
+
+<div>
+	<label name="predefined"> Combo box predefinido por rails</label>
+	<%= time_zone_select(:person, :time_zone) %>
+</div>

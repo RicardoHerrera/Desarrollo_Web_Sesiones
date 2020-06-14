@@ -1,0 +1,16 @@
+<table>
+	<td>
+		<h1>Welcome</h1>
+	</td>
+	<td>
+		<%= image_tag("Home/logo-upc.png", alt: "Logo_upc", width: "50px", heigth: "50px") %>	
+	</td>
+</table>
+
+<% if logged_in? %>
+    <h1>You are Logged In, <%= current_user.username %></h1>
+    <%= button_to "Log out", 'logout', method: :get %>
+<% else %>
+	<%= button_to "Login", '/login', method: :get%>
+	<%= button_to "Sign Up", '/users/new', method: :get%>
+<%end%>

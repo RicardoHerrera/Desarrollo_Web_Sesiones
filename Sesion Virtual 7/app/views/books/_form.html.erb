@@ -1,0 +1,34 @@
+
+<h1><%= titulo %></h1>
+
+<%= form_for @book do |f| %>
+
+	<%= f.label :titulo %>
+	<%= f.text_field :titulo, autofocus: true %>
+
+	<br>
+
+	<%= f.label :autor %>
+	<%= f.text_field :autor%>
+
+	<br>
+
+	<%= f.label :descripcion %>
+	<%= f.text_area :descripcion, rows: 4 %>
+
+	<br>
+
+	<%= f.label :fecha_publicacion %>
+	<%= f.date_field :fecha_publicacion %>
+
+	<br>
+
+	<%= f.label :price %>
+	<%= f.number_field :price, step: :any %>
+
+	<br>
+
+	<%= f.submit %>
+
+
+<% end %>

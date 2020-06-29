@@ -1,0 +1,17 @@
+<h1>Books</h1>
+
+
+<%= form_tag(book_path, method: :get) do %>
+
+	Libros <%= text_field_tag :searchString %>
+	<%= submit_tag 'Buscar', name: nil %>
+
+<% end %>
+
+<% @books.each do |book| %>
+
+	<ul>
+		<li><%= book.titulo %></li>
+	</ul>
+
+<% end %>

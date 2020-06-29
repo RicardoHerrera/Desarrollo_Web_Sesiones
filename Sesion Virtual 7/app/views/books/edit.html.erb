@@ -1,0 +1,11 @@
+
+<% if @book.autor == "Ricardo" %>
+	<%= render "form", titulo: "Editar Libro" %>
+<% else %>
+	<%= render "menu", titulo: "Editar Libro" %>
+<% end %>
+
+<ul>
+	<li> item 1</li>
+	<li> item 2</li>
+</ul>

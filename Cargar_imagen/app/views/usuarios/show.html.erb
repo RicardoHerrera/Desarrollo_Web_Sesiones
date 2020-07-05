@@ -1,0 +1,33 @@
+<%= link_to("<< Volver al listado", usuarios_path, :class => 'back-link') %>
+
+<div class="usuarios show">
+  <h2>Mostrar Usuario
+
+  <table summary="Usuario detail view">
+  	<td>
+  		<tr>
+     	 	<th>Name</th>
+      		<td><%= @usuario.name %></td>
+	    </tr>
+	    <tr>
+	      <th>Apellido</th>
+	      <td><%= @usuario.apellido %></td>
+	    </tr>
+	    <tr>
+	      <th>Created</th>
+	      <td><%= @usuario.created_at %></td>
+	    </tr>
+	    <tr>
+	      <th>Updated</th>
+	      <td><%= @usuario.updated_at %></td>
+	    </tr>
+	    <tr>
+	    	<td>
+  			<%= image_tag(@usuario.avatar.url, 
+  			style: 'height:auto;width:300px;', alt: 'Avatar') if @usuario.avatar? %>
+  			</td>
+  		</tr>
+	 </td>
+  </table>
+
+</div>

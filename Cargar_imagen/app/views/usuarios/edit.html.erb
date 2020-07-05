@@ -1,0 +1,20 @@
+<%= link_to("<< Volver al listado", usuarios_path, :class => 'back-link') %>
+
+<div class="usuarios edit">
+  <h2>Editar Usuario</h2>
+
+  <%= form_for @usuario do |f|%>
+  <%= f.label :Nombre, autofocus: true %><br>
+  <%= f.text_field :name %><br><br>
+  <%= f.label :Apellido %><br>
+  <%= f.text_field :apellido %><br><br>
+  <%= f.label :Avatar %>
+  <%= image_tag(@usuario.avatar.url, 
+  			style: 'height:auto;width:300px;', alt: 'Avatar') if @usuario.avatar? %><br>
+  <%= f.file_field :avatar, accept:'image/*' %><br><br>
+    
+  <%= f.submit 'Actualizar' %>
+
+<%end%>
+
+</div>

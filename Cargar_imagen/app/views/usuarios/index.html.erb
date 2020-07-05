@@ -1,0 +1,27 @@
+<div class="users index">
+  <h2> Usuarios </h2>
+
+  <%= link_to('Crear Usuario',
+              new_usuario_path,
+              :class => 'action new') %>
+
+  <table>
+    <tr class="header">
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+    </tr>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+          <td><%= usuario.name %></td>
+          <td><%= usuario.apellido %></td>
+          <td class="actions">
+            <%= link_to('Show', usuario_path(usuario), :class => 'action show') %>
+            <%= link_to('Edit', edit_usuario_path(usuario), :class => 'action edit') %>
+            <%= link_to('Delete', '#', :class => 'action delete') %>
+          </td>
+      </tr>
+    <% end %>
+  </table>
+
+</div>

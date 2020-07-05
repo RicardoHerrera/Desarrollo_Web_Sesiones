@@ -9,7 +9,7 @@ Desde el CMD o terminal, ejecutar
 `gem install carrierwave`
 Luego, dirigirse a la carpeta Gemfile y agregar la gema
 `gem 'carrierwave', '~> 2.0'`
-Por último, estando en la raíz del proyecto, ejecutar bundle install para actualizar el proyecto
+Por último, desde el CMD/terminal, estando en la raíz del proyecto, ejecutar bundle install para actualizar el proyecto
 `bundle install`
 
 ## Crear el archivo uploader

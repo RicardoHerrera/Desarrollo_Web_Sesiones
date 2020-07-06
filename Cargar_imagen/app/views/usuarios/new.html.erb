@@ -3,15 +3,19 @@
 <div class="usuarios create">
   <h2>Crear Usuario</h2>
 
-  <%= form_for @usuario do |f|%>
-  <%= f.label :Nombre %><br>
-  <%= f.text_field :name %><br><br>
-  <%= f.label :Apellido %><br>
-  <%= f.text_field :apellido %><br><br>
-  <%= f.label :Avatar %><br>
-  <%= f.file_field :avatar, accept:'image/*' %><br><br>
-  <%= f.submit 'Crear usuario' %>
-
-<%end%>
+	<% flash.each do |type, msg| %>
+  		<div class="alert alert-info">
+    		<%= msg %>
+  		</div>
+	<% end %>
+ 	<%= form_for @usuario do |f|%>
+	  <%= f.label :Nombre %><br>
+	  <%= f.text_field :name %><br><br>
+	  <%= f.label :Apellido %><br>
+	  <%= f.text_field :apellido %><br><br>
+	  <%= f.label :Avatar %><br>
+	  <%= f.file_field :avatar, accept:'image/*' %><br><br>
+	  <%= f.submit 'Crear usuario' %>
+	<%end%>
 
 </div>

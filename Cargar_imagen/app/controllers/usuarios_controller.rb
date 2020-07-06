@@ -14,7 +14,8 @@ class UsuariosController < ApplicationController
   def create
   	@usuario = Usuario.create(params.require(:usuario).permit(:name, :apellido, :avatar))
   	if @usuario.save
-	  		redirect_to usuarios_path
+	  		flash[:alert] = "Usuario Creado!"
+        redirect_to new_usuario_url
 	  	else
 	  		redirect_to '/create'
 	  	end

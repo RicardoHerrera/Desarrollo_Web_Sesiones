@@ -1,0 +1,24 @@
+<table summary="Section form fields">
+  <tr>
+    <th>Titulo</th>
+    <td><%= @book.titulo %></td>
+  </tr>
+  <tr>
+    <th>Autor</th>
+    <td><%= @book.author.nombre %></td>
+  </tr>
+  <tr>
+    <th>Visible</th>
+    <td><%= @book.visible ? 'si' : 'no' %></td>
+  </tr>
+  <tr>
+    <th>Estado</th>
+    <td>
+      <%= @book.estado %>
+    </td>
+  </tr>
+  <tr>
+    <th>Descripcion</th>
+    <td><%= @book.descripcion %></td>
+  </tr>
+</table>

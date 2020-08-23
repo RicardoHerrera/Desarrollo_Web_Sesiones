@@ -1,0 +1,22 @@
+<div>
+	<table>
+		<tr>
+			<th>Título</th>
+			<th>Autor</th>
+			<th>Estado</th>
+			<th>Acciones</th>
+		</tr>
+		<% @books.each do |book| %>
+			<tr>
+				<td><%= book.titulo %></td>
+				<td><%= book.author.nombre %></td>
+				<td><%= book.estado %></td>
+				<td>
+					<%= link_to("Mostrar", book_path(book)) %>
+					<%= link_to("Editar", edit_book_path(book)) %>
+					<%= "eliminar" %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>

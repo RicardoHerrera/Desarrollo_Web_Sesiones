@@ -1,2 +1,11 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<h2> Nuevo libro</h2>
+
+<%= form_for(@book) do |f| %>
+	
+	<%= render( :partial => "form", :locals => { :f => f }) %>
+
+	<div>
+		<%= f.submit("Crear libro") %>
+	</div>
+
+<% end %>

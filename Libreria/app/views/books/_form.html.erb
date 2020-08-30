@@ -1,0 +1,28 @@
+
+
+<table>
+		<tr>
+			<th>Titulo</th>
+			<td><%= f.text_field(:titulo) %></td>
+		</tr>
+		<tr>
+			<th>Autor</th>
+			<td><%= f.select(:author_id, @authors) %></td>
+		</tr>
+		<tr>
+			<th>Visible</th>
+			<td><%= f.check_box(:visible) %></td>
+		</tr>
+		<tr>
+			<th>Estado</th>
+			<td>
+				<%= f.radio_button(:estado, 'Publicado') %> Publicado
+				<%= f.radio_button(:estado, 'No Publicado') %> No Publicado
+			</td>
+		</tr>
+		<tr>
+			<th>Descripcion</th>
+			<td><%= f.text_area(:descripcion, :size => '40x10') %> </td>
+		</tr>
+
+</table>

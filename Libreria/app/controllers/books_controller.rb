@@ -9,6 +9,18 @@ class BooksController < ApplicationController
   end
 
   def new
+    @book = Book.new
+    @authors = []
+    Author.all.map { |author| @authors.append([author.nombre, author.id]) }
+  end
+
+  def create
+    @book = Book.create(book_params)
+    if @book.save 
+      redirect_to(books_path)
+    else
+      render 'new'
+    end
   end
 
   def edit

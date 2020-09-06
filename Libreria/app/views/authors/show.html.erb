@@ -1,2 +1,21 @@
-<h1>Authors#show</h1>
-<p>Find me in app/views/authors/show.html.erb</p>
+<table summary="Section form fields">
+  <tr>
+    <th>Nombre</th>
+    <td><%= @author.nombre %></td>
+  </tr>
+  <tr>
+    <th>Apellido</th>
+    <td><%= @author.apellido %></td>
+  </tr>
+  <tr>
+    <th>Correo</th>
+    <td><%= @author.correo %></td>
+  </tr>
+  <tr>
+    <th>Avatar</th>
+    <td>
+      <%= image_tag(@author.avatar.url,
+                    style: 'height:auto;width:300px;', alt: 'Avatar') if @author.avatar? %><br>
+    </td>
+  </tr>
+</table>

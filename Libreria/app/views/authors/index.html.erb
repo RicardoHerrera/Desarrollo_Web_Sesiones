@@ -1,2 +1,41 @@
-<h1>Authors#index</h1>
-<p>Find me in app//authors/index.html.erb</p>
+<h2>Autores</h2>
+
+<div>
+	<%= link_to("Crear Autor", new_author_path()) %>
+</div>
+
+<table>
+	<tr>
+		<td>
+			<%= form_tag authors_path, :method => "get" do %>
+				Nombre <%= text_field_tag :nombre, params[:nombre] %>
+				Apellido <%= text_field_tag :apellido, params[:apellido] %>
+				<%= submit_tag 'Buscar', name: nil %>
+			<% end %>
+		</td>
+	</tr>
+</table>
+
+<div>	
+
+	<table>
+		<tr>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Correo</th>
+			<th>Acciones</th>
+		</tr>
+		<% @authors.each do |author| %>
+			<tr>
+				<td><%= author.nombre %></td>
+				<td><%= author.apellido %></td>
+				<td><%= author.correo %></td>
+				<td>
+					<%= link_to("Mostrar", author_path(author)) %>
+					<%= link_to("Editar", edit_author_path(author)) %>
+					<%= "eliminar" %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>

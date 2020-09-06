@@ -1,2 +1,11 @@
-<h1>Authors#new</h1>
-<p>Find me in app/views/authors/new.html.erb</p>
+<h2> Nuevo Autor</h2>
+
+<%= form_for(@author) do |f| %>
+	
+	<%= render( :partial => "form", :locals => { :f => f }) %>
+
+	<div>
+		<%= f.submit("Crear Autor") %>
+	</div>
+
+<% end %>

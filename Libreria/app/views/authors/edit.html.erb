@@ -1,2 +1,12 @@
-<h1>Authors#edit</h1>
-<p>Find me in app/views/authors/edit.html.erb</p>
+<h2> Actualizar Autor</h2>
+
+<%= form_for(@author) do |f| %>
+
+	
+	<%= render( :partial => "form", :locals => { :f => f }) %>
+
+	<div>
+		<%= f.submit("actualizar Autor") %>
+	</div>
+
+<% end %>

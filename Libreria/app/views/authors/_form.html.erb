@@ -1,0 +1,25 @@
+<table>
+		<tr>
+			<th>Nombre</th>
+			<td><%= f.text_field(:nombre) %></td>
+		</tr>
+		<tr>
+			<th>Apellido</th>
+			<td><%= f.text_field(:apellido) %></td>
+		</tr>
+		<tr>
+			<th>Correo</th>
+			<td><%= f.email_field(:correo) %></td>
+		</tr>
+		<tr>
+			<th>Avatar</th>
+			<%= image_tag(@author.avatar.url, 
+						style: 'height:auto;width:300px', 
+						alt: 'Avatar') if @author.avatar? 
+			%><br>
+			<td>
+				<%= f.file_field :avatar, accept:'image/*' %><br><br>
+			</td>
+		</tr>
+
+</table>

@@ -1,7 +1,6 @@
 <h2> Actualizar libro</h2>
 
-<%= form_for(@book) do |f| %>
-
+<%= form_for(@book, :url => book_path(:author_id => @author.id)) do |f| %>
 	
 	<%= render( :partial => "form", :locals => { :f => f }) %>
 

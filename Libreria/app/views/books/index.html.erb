@@ -1,7 +1,7 @@
 <h2>Libros</h2>
 
 <div>
-	<%= link_to("Crear Libro", new_book_path()) %>
+	<%= link_to("Crear Libro", new_book_path(:author_id => @author.id)) %>
 </div>
 
 <div>	
@@ -19,8 +19,8 @@
 				<td><%= book.author.nombre %></td>
 				<td><%= book.estado %></td>
 				<td>
-					<%= link_to("Mostrar", book_path(book)) %>
-					<%= link_to("Editar", edit_book_path(book)) %>
+					<%= link_to("Mostrar", book_path(book, :author_id => @author.id)) %>
+					<%= link_to("Editar", edit_book_path(book, :author_id => @author.id)) %>
 					<%= "eliminar" %>
 				</td>
 			</tr>

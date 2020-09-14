@@ -1,7 +1,14 @@
 class BooksController < ApplicationController
   
+  #,  :only => [:nombremetoro], :except => [:new]
+  before_action :find_author
+
   def index
-    @books = Book.all
+    # Obtner el id del author en los parametros    
+    # Obtener el author con el id recibido
+    # @author = Author.find(params[:author_id])
+    # Buscar los libros del author
+    @books = @author.books
   end
 
   def show
@@ -9,15 +16,16 @@ class BooksController < ApplicationController
   end
 
   def new
-    @book = Book.new
-    @authors = []
-    Author.all.map { |author| @authors.append([author.nombre, author.id]) }
+    @book = Book.new(:author_id => @author.id)
+    # @authors = []
+    # Author.all.map { |author| @authors.append([author.nombre, author.id]) }
   end
 
   def create
     @book = Book.create(book_params)
+    @book.author = @author
     if @book.save 
-      redirect_to(books_path)
+      redirect_to(books_path(:author_id => @author.id))
     else
       render 'new'
     end
@@ -25,14 +33,14 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    @authors = []
-    Author.all.map { |author| @authors.append([author.nombre, author.id]) }
+    # @authors = []
+    # Author.all.map { |author| @authors.append([author.nombre, author.id]) }
   end
 
   def update
     @book = Book.find(params[:id])
     if @book.update_attributes(book_params)
-      redirect_to(book_path(@book))
+      redirect_to(book_path(@book, :author_id => @author.id))
     else
       @authors = []
       Author.all.map { |author| @authors.append([author.nombre, author.id]) }
@@ -48,4 +56,9 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:titulo, :author_id, :visible, :descripcion, :estado)
   end
+
+  def find_author
+    @author = Author.find(params[:author_id])
+  end
+
 end

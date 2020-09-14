@@ -7,7 +7,8 @@
 		</tr>
 		<tr>
 			<th>Autor</th>
-			<td><%= f.select(:author_id, @authors) %></td>
+			<%# f.select(:author_id, @authors) %>
+			<td> <%= f.object.author.nombre %></td>
 		</tr>
 		<tr>
 			<th>Visible</th>

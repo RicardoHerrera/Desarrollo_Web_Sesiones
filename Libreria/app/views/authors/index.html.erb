@@ -31,9 +31,10 @@
 				<td><%= author.apellido %></td>
 				<td><%= author.correo %></td>
 				<td>
+					<%= link_to("Ver Libros", books_path(:author_id => author.id)) %>
 					<%= link_to("Mostrar", author_path(author)) %>
 					<%= link_to("Editar", edit_author_path(author)) %>
-					<%= "eliminar" %>
+					<%= "eliminar" %>					
 				</td>
 			</tr>
 		<% end %>

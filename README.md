@@ -23,3 +23,5 @@ _Sesiones virtuales de desarrollo web_
 
 1. Ir a la raíz del proyecto
 2. Ejecutar `rails s`
+
+##Prueba

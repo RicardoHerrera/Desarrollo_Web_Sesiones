@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    </head>
+    <body>
+        <%= form_for :sesion3, :html => { :method => :post, :class => "needs-validation", :novalidate => "novalidate" } do |f| %>
+
+        <div>
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <%= f.label :nombre, 'Nombre' %>
+                        <%= f.text_field :name, { :class => "form-control", :placeholder => "Ingresar nombres", 
+                        :required => "required" } %>
+                        <!-- Mostrar mensaje dependiendo si se encuentra o no-->
+                        <div class="valid-feedback">Valido</div>
+                        <div class="invalid-feedback">Por favor ingresar nombre</div>
+                    </div>                                 
+                </div>
+                
+                <div class="col">
+                    <div>
+                        <%= f.label :apellido, 'apellido' %>
+                        <%= f.text_field :apellido, { :class => "form-control", :placeholder => "Ingresar apellido", 
+                            :required => "required" } %>
+                        <div class="invalid-feedback">Por favor ingresar apellido</div> 
+                    </div> 
+                </div>
+            </div>
+            <div>
+                <div>
+                    <%= f.label :dni, 'Dni' %>
+                    <%= f.text_field :dni,  { :class => "form-control", :placeholder => "Ingresar DNI", 
+                    :type => "number", :required => "required" } %>
+                </div>
+                <div class="invalid-feedback">Ingresar un dni valido</div>
+            </div>
+            <div>
+                <%= f.label :email, 'Correo electrónico' %>
+                <%= f.text_field :email, { :class => "form-control", :placeholder => "Ingresar correo",
+                    :required => "required" } %>
+            </div>
+            <div>
+                <%= f.label :esSoltero, '¿Soltero?' %>
+                <%= f.check_box :esSoltero %>
+            </div>
+            <div>
+            	<div>
+            		<%= f.label :genero, 'Selecciona tu género' %>
+            	</div>                
+            	<div>
+            		<%= f.radio_button :genero, 'Femenino' %> Femenino
+					<%= f.radio_button(:genero, 'Masculino') %> Masculino
+					<%= f.radio_button(:genero, 'Otro', { :checked => true }) %> Otro
+            	</div>
+            </div>
+            <div>
+            	<div>
+            		<%= f.label :city, 'Selecciona tu Ciudad' %>
+            	</div> 
+            	<div>
+            		<%= f.select(:city, @cities) %>
+            	</div>            	
+            </div>
+            <div>
+                <%= f.submit "Enviar", :class => "btn btn-primary" %>
+            </div>
+        </div>
+
+        <% end %>
+    </body>
+</html>
